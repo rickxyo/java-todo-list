@@ -1,6 +1,10 @@
+package br.com.rickxyo.todolist.app;
+
+import br.com.rickxyo.todolist.utils.TerminalUtils;
+
 import java.util.Scanner;
 
-public class Main {
+public class ToDoList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean taskMenu = true;
@@ -30,6 +34,7 @@ public class Main {
                     break;
                 case 5:
                     taskMenu = false;
+                    TerminalUtils.clearTerminal();
                     break;
                 default:
                     System.out.println("Not a option! Try again");
