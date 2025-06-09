@@ -28,8 +28,7 @@ public class ToDoList {
                     TerminalUtils.clearTerminal();
                     System.out.println("Enter task title: ");
                     String taskTitle = scanner.nextLine();
-                    Task task = new Task(1, taskTitle);
-                    taskService.addTask(task);
+                    taskService.createTask(taskTitle);
                     System.out.println("Task added successfully!");
                     break;
                 case 2:
