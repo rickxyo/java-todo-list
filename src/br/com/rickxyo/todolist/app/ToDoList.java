@@ -1,5 +1,7 @@
 package br.com.rickxyo.todolist.app;
 
+import br.com.rickxyo.todolist.model.Task;
+import br.com.rickxyo.todolist.service.TaskService;
 import br.com.rickxyo.todolist.utils.TerminalUtils;
 
 import java.util.Scanner;
@@ -7,6 +9,7 @@ import java.util.Scanner;
 public class ToDoList {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        TaskService taskService = new TaskService();
         boolean taskMenu = true;
 
         while (taskMenu) {
@@ -18,10 +21,16 @@ public class ToDoList {
             System.out.println("5 - Exit");
 
             int number = scanner.nextInt();
+            scanner.nextLine();
 
             switch (number) {
                 case 1:
-                    System.out.println("teste 1");
+                    TerminalUtils.clearTerminal();
+                    System.out.println("Enter task title: ");
+                    String taskTitle = scanner.nextLine();
+                    Task task = new Task(1, taskTitle);
+                    taskService.addTask(task);
+                    System.out.println("Task added successfully!");
                     break;
                 case 2:
                     System.out.println("teste 2");
